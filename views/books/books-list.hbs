@@ -1,13 +1,15 @@
 <h1>BOOKS</h1>
 
-{{#each books}}
-  <div>
-    <h3>{{title}}</h3>
-    <p>By: {{author}}</p>
-    <a href="/books/{{_id}}">See details</a>
-    <a href="/books/{{_id}}/edit">Edit</a> 
-    <form action="/books/{{_id}}/delete" method="POST">
-      <button>Delete</button>
-    </form>
-  </div>
-{{/each}}
+<div class="row mx-auto d-flex">
+  {{#each books}}
+    <div class="col-3 book">
+      <h3>{{title}}</h3>
+      <p>By: {{author}}</p>
+      <a href="/books/{{_id}}" class="btn btn-primary">See details</a>
+      <a href="/books/{{_id}}/edit" class="btn btn-info">Edit</a>
+      <form action="/books/{{_id}}/delete" method="POST">
+        <button class="btn btn-danger">Delete</button>
+      </form>
+    </div>
+  {{/each}}
+</div>
